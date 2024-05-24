@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id":  "successful_login",
+    "type": "object",
+    "default": {},
+    "title": "Schema for a successful login",
+    "required": ["message", "authorization"],
+    "properties": {
+        "message": {
+            "description": "message info for successful login",
+            "type": "string"
+        },
+        "authorization": {
+            "type": "string",
+            "pattern": "^Bearer .*$"
+        }
+    },
+    "examples": [{
+        "message": "Login realizado com sucesso",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNTg5NzU4NzQ2LCJleHAiOjE1ODk3Njg3NDZ9.B6TASHV8k9xBerz4NSeFBlAZGSDhZlqESt767M0567I"
+    }]
+}

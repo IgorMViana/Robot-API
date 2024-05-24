@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id":  "failed_login",
+    "type": "object",
+    "title": "Schema for a failed login",
+    "required": ["message"],
+    "properties": {
+        "message": {
+            "description": "message info for successful login",
+            "type": "string"
+        }
+    },
+    "examples": [{
+        "message": "Email e/ou senha inválidos"
+    }]
+}

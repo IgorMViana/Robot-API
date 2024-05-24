@@ -4,9 +4,12 @@ Resource         base.resource
 
 
 *** Keywords ***
-Criar usuario
+Login
     [Documentation]    Cria usuario comum ou administrador
-    [Arguments]    ${adm}=false
-    ${USUARIO.administrador}    Set Variable    ${adm}
-    ${RESPONSE}  POST On Session     alias=${ALIAS}    url=usuarios    json=${USUARIO}
-    Validate Jsonschema From File    ${RESPONSE.json()}    ./schema/user/userResponse.json
+    [Arguments]    ${email}=${EMPTY}    ${password}=${EMPTY}
+    VAR    &{LOGIN}    email=${email}    password=${password}
+    Log To Console    ${LOGIN}
+    ${RESPONSE}  POST On Session     alias=${ALIAS}    url=login    json=${LOGIN}    expected_status=any
+    Log To Console    ${RESPONSE.json()}
+    Validate Jsonschema From File    ${RESPONSE.json()}    ./schema/login/login.json
+    
