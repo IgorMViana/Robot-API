@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation   Testes de schema do endpoint de login (ServeRestAPI)
-Resource    ../../resources/login.resource
+Resource    ../../resource/login.resource
 Suite Setup    Criar usuario base
 Suite Teardown    Deleta usuario base
 
