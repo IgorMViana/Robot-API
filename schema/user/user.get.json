@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id":  "user_get",
+    "type": "object",
+    "title": "Schema for user get",
+    "required": ["quantidade", "usuarios"],
+    "properties": {
+        "quantidade": {
+            "description": "quatity of users registered",
+            "type": "integer"
+        },
+        "usuarios": {
+            "description": "array of user objects",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["nome", "email", "password", "administrador", "_id"],
+                "properties": {
+                    "nome":{
+                        "description": "user name",
+                        "type": "string"
+                    },
+                    "email":{
+                        "$anchor":  "email",
+                        "description": "user email",
+                        "type": "string",
+                        "pattern": "^.+@([\\w-]+\\.)+[\\w-]{2,4}$"
+                    },
+                    "password":{
+                        "description": "user password",
+                        "type": "string"
+                    },
+                    "administrador":{
+                        "description": "user is administrator",
+                        "enum": ["true", "false"]
+                    },
+                    "_id":{
+                        "description": "user id",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "examples": [{
+        "quantidade": 1,
+        "usuarios": [
+          {
+            "nome": "Fulano da Silva",
+            "email": "beltrano@qa.com.br",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "0uxuPY0cbmQhpEz1"
+          }
+        ]
+      }]
+}
