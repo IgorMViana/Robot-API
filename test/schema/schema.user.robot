@@ -10,4 +10,4 @@ ${USER_GET}    ./schema/user/user.get.json
 *** Test Cases ***
 Validar schema de listagem de usuarios
     ${JSON}    Listar usuarios    administrador=false    password=123456
-    Validate GET schema    ${JSON}    ${USER_GET}
+    Validate Jsonschema From File    ${JSON}    ${USER_GET}

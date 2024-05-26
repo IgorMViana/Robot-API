@@ -13,9 +13,4 @@ Listar usuarios
     VAR    &{query}    _id=${_id}    nome=${nome}    password=${password}    administrador=${administrador}
     ${query,email}    Set Variable If    '${email}' != '${EMPTY}'    ${email}
     ${RESPONSE}  GET On Session     alias=${ALIAS}    url=usuarios    expected_status=any    params=${query}
-    Log To Console    ${RESPONSE.json()}
     RETURN    ${RESPONSE.json()}
-
-Validate GET schema
-    [Arguments]    ${JSON}    ${SCHEMA}
-    Validate Jsonschema From File    ${JSON}    ${SCHEMA}

@@ -13,7 +13,7 @@ ${FAILED_LOGIN}    ./schema/login/failed_login.json
 *** Test Cases ***
 Validar schema de sucesso do endpoint Login
     ${JSON}    Login    ${USUARIO_BASE.email}    ${USUARIO_BASE.password}
-    Validate login schema    ${JSON}    ${SUCCESSFUL_LOGIN}
+    Validate Jsonschema From File   ${JSON}    ${SUCCESSFUL_LOGIN}
 
 Validar schema de Login com campos em branco
     [Template]    Login em branco 

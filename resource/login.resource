@@ -14,10 +14,6 @@ Login
     ${RESPONSE}  POST On Session     alias=${ALIAS}    url=login    json=${LOGIN}    expected_status=any
     RETURN    ${RESPONSE.json()}
     
-Validate login schema
-    [Arguments]    ${JSON}    ${SCHEMA}
-    Validate Jsonschema From File    ${JSON}    ${SCHEMA}
-    
 Login em branco
     [Arguments]    ${email}    ${password}
     ${JSON}    Login    ${email}    ${password}
