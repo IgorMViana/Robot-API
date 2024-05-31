@@ -4,6 +4,7 @@
     "type": "object",
     "title": "Schema for a failed login",
     "required": ["message"],
+    "maxProperties": 1,
     "properties": {
         "message": {
             "description": "message info for successful login",

@@ -5,6 +5,8 @@
     "default": {},
     "title": "Schema for a successful login",
     "required": ["message", "authorization"],
+    "minProperties": 2,
+    "maxProperties": 2,
     "properties": {
         "message": {
             "description": "message info for successful login",
