@@ -30,13 +30,8 @@ Cria dados aleatórios do usuário
     ...    password=${RANDOM_PWD}    administrador=${ADM}    scope=test
 
 Cria usuario e retorna
-    ${RESPONSE}  POST On Session     alias=${ALIAS}    url=usuarios    json=${USER}
+    ${RESPONSE}  POST On Session     alias=${ALIAS}    url=usuarios    json=${USER}    expected_status=created
     RETURN    ${RESPONSE.json()}
-
-Cria usuario com dados aleatorios
-    Cria dados aleatórios do usuário
-    ${RETURN}    Cria usuario e retorna
-    RETURN    ${RETURN}
 
 Deleta usuario criado
     [Arguments]    ${ID}
