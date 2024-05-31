@@ -11,6 +11,7 @@ Validar criacao de usuario com sucesso
     [Setup]    Cria dados aleatórios do usuário
     [Teardown]    Deleta usuario criado    ${RESPONSE}[_id]
     ${RESPONSE}    Cria usuario e retorna
+    Status Should Be    created
     Should Be Equal    ${RESPONSE}[message]    Cadastro realizado com sucesso
     Should Match Regexp    ${RESPONSE}[_id]    \\w{16}
     
